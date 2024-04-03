@@ -1,23 +1,30 @@
 import re
 import requests
 import base64
+import os
 import json
 import logging
-import os
 
 # Default Password: OZMoon
 password = 'T1pNb29u' # Feel free to change it use base64 encoder ! 
 
-for _ in range(3):
-    user_password = input("Enter password: ")
+class colors:
+    RED = '\033[91m'
+    YELLOW = '\033[93m'
+    GREEN = '\033[92m'
+    BLUE = '\033[94m'
+    END = '\033[0m'
+
+for _ in range(5): # Retry 5x you can change it!
+    user_password = input(f"{colors.BLUE}[INFO]{colors.END} Enter password: ")
 
     if base64.b64encode(user_password.encode('utf-8')).decode('utf-8') == password:
         break
     else:
-        print("Incorrect password. Please try again.")
+        print(f"{colors.YELLOW}[WARNING]{colors.END} Incorrect password. Please try again... {colors.GREEN}[Default Password is 'OZMoon']{colors.END}")
 
 else:
-    print("Incorrect password. Exiting the program...")
+    print(f"{colors.RED}[SHUTDOWN]{colors.END} Incorrect password 5x times! Shutdown the program...")
     exit()
 
 logpath = 'log/logs.json'
@@ -68,29 +75,29 @@ def extract_urls(text):
     return urls
 
 while True:
-    version = input("Write Star Rail Version (use number ex: '1.3.51') or ('exit' 'quit' 'stop' 'shutdown') to stop the program: ")
+    version = input(f"{colors.BLUE}[INFO]{colors.END} Write Star Rail Version (use number ex: '1.3.51') or ('exit' 'quit' 'stop' 'shutdown') to stop the program: ")
 
     byee = {'exit', 'quit', 'stop', 'shutdown'}
     if version.lower() in byee:
-        print("Exiting the program...")
+        print(f"{colors.RED}[STOP]{colors.END} Shutdown the program...")
         break
 
-    url = f'' # Add Dispatch Url Here
+    url = f'' # Add dispatch url here
 
     response = requests.get(url)
 
-    print(f"Response Status Code: {response.status_code}")
+    print(f"{colors.BLUE}[INFO]{colors.END} Status Code: {response.status_code}")
 
     try:
         dec_data = base64.b64decode(response.content)
-        print(f"Raw Message Content for Version {version}: {dec_data}")
+        print(f"{colors.BLUE}[INFO]{colors.END} Raw Message Content for Version {version}: {dec_data}")
 
         dec_message = decode_protobuf_message(dec_data)
-        print(f"Result Message for Version {version}: {dec_message}")
-
+        print(f"{colors.BLUE}[INFO]{colors.END} Result Message for Version {version}: {dec_message}")
+        
         urls = extract_urls(str(dec_data))
         if urls:
-            print("Check Message contains URL(s):")
+            print(f"{colors.BLUE}[INFO]{colors.END} Check Message contains URL:")
             for url in urls:
                 print(url)
                 
@@ -106,5 +113,6 @@ while True:
         logs.append(log_entry)
         with open(logpath, 'w') as log_file:
             json.dump(logs, log_file, indent=2)
+
     except Exception as e:
-        print(f"Error message: {e}")
+        print(f"{colors.RED}[ERROR]{colors.END} message: {e}")
