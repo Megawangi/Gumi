@@ -19,6 +19,7 @@ Super Simple Anime Game Dispatch Url Checker written using python
 
 - open cmd/terminal 
 - python main.py 
+- enter password (Default Password: OZMoon)
 - enter version (use number ex: 1.3.51) .50 isnt working yet!
 - congrats you founded that mihoyo already update their beta
 

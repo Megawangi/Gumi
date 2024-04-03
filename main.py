@@ -1,7 +1,9 @@
 import requests
 import base64
 
-password = 'YOUR_BASE64_ENCODED_PASS'
+# Default Password: OZMoon
+password = 'T1pNb29u' # Feel free to change it use base64 encoder ! 
+
 
 for _ in range(3):
     user_password = input("Enter password: ")
