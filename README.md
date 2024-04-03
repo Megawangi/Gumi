@@ -3,7 +3,7 @@
 Pemeriksa Url Pengiriman Game Anime Super Sederhana versi python!
 
 # Language
-[ID](https://github.com/Megawangi/Gumi/README.md) || [ENG](https://github.com/Megawangi/Gumi/README_en-US.md) || [CHS](https://github.com/Megawangi/Gumi/README_zh-CN.md)
+[ID](https://github.com/Megawangi/Gumi/blob/main/README.md) || [ENG](https://github.com/Megawangi/Gumi/blob/main/README_en-US.md) || [CHS](https://github.com/Megawangi/Gumi/blob/main/README_zh-CN.md)
 
 # Apa ini?
 
@@ -15,7 +15,7 @@ Pemeriksa Url Pengiriman Game Anime Super Sederhana versi python!
 # Persyaratan
 
 - [Python](https://www.python.org/downloads/)
-- instal semua di [requirements.txt](https://github.com/Megawangi/Gumi/requirements.txt)
+- instal semua di [requirements.txt](https://github.com/Megawangi/Gumi/blob/main/requirements.txt)
 - Otak
 - Apa?
 
@@ -36,4 +36,4 @@ Pemeriksa Url Pengiriman Game Anime Super Sederhana versi python!
 - Saya terlalu malas untuk memperbaruinya, Anda dapat menambahkan fitur sesuai dengan logika kode Anda.
 
 
-## Status: Selesai di [bb9c756](https://github.com/Megawangi/Gumi/commit/bb9c756196ca1f0d9c952f2c9a80b62b0d91660c) Berjalan Normal !
+## Status: Selesai di [bb9c756](https://github.com/Megawangi/Gumi/blob/main/commit/bb9c756196ca1f0d9c952f2c9a80b62b0d91660c) Berjalan Normal !

@@ -3,7 +3,7 @@
 超级简单的动漫游戏派遣 Url Checker python 版本！
 
 # Language
-[ID](https://github.com/Megawangi/Gumi/README.md) || [ENG](https://github.com/Megawangi/Gumi/README_en-US.md) || [CHS](https://github.com/Megawangi/Gumi/README_zh-CN.md)
+[ID](https://github.com/Megawangi/Gumi/blob/main/blob/main/README.md) || [ENG](https://github.com/Megawangi/Gumi/blob/main/blob/main/README_en-US.md) || [CHS](https://github.com/Megawangi/Gumi/blob/main/README_zh-CN.md)
 
 # 这是什么？
 
@@ -15,7 +15,7 @@
 # 要求
 
 - [Python](https://www.python.org/downloads/)
-- 安装 [requirements.txt](https://github.com/Megawangi/Gumi/requirements.txt) 中的所有内容
+- 安装 [requirements.txt](https://github.com/Megawangi/Gumi/blob/main/requirements.txt) 中的所有内容
 - 大脑
 - 什么？
 
@@ -36,4 +36,4 @@
 - 我懒得更新它，你可以根据你的代码逻辑添加功能。
 
 
-## 状态： 完成于 [bb9c756](https://github.com/Megawangi/Gumi/commit/bb9c756196ca1f0d9c952f2c9a80b62b0d91660c)，运行正常！
+## 状态： 完成于 [bb9c756](https://github.com/Megawangi/Gumi/blob/main/commit/bb9c756196ca1f0d9c952f2c9a80b62b0d91660c)，运行正常！

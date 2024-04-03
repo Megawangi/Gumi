@@ -3,7 +3,7 @@
 Super Simple Anime Game Dispatch Url Checker python version!
 
 # Language
-[ID](https://github.com/Megawangi/Gumi/README.md) || [ENG](https://github.com/Megawangi/Gumi/README_en-US.md) || [CHS](https://github.com/Megawangi/Gumi/README_zh-CN.md)
+[ID](https://github.com/Megawangi/Gumi/blob/main/README.md) || [ENG](https://github.com/Megawangi/Gumi/blob/main/README_en-US.md) || [CHS](https://github.com/Megawangi/Gumi/blob/main/README_zh-CN.md)
 
 # What is this?
 
@@ -15,7 +15,7 @@ Super Simple Anime Game Dispatch Url Checker python version!
 # Requirements
 
 - [Python](https://www.python.org/downloads/)
-- install all in [requirements.txt](https://github.com/Megawangi/Gumi/requirements.txt)
+- install all in [requirements.txt](https://github.com/Megawangi/Gumi/blob/main/requirements.txt)
 - Brain
 - What?
 
@@ -36,4 +36,4 @@ Super Simple Anime Game Dispatch Url Checker python version!
 - Im too lazy to update it, You can add features according to the logic of your code.
 
 
-## Status: Finished at [bb9c756](https://github.com/Megawangi/Gumi/commit/bb9c756196ca1f0d9c952f2c9a80b62b0d91660c) Running Normally !
+## Status: Finished at [bb9c756](https://github.com/Megawangi/Gumi/blob/main/commit/bb9c756196ca1f0d9c952f2c9a80b62b0d91660c) Running Normally !
