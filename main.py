@@ -1,3 +1,4 @@
+import re
 import requests
 import base64
 
@@ -53,6 +54,10 @@ def decode_protobuf_message(data):
             message['regionList'].append(repeated_value.decode('utf-8'))
     return message
 
+def extract_urls(text):
+    urls = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)
+    return urls
+
 while True:
     version = input("Write Star Rail Version (use number ex: '1.3.51') or ('exit' 'quit' 'stop' 'shutdown') to stop the program: ")
 
@@ -74,5 +79,11 @@ while True:
         dec_message = decode_protobuf_message(dec_data)
         print(f"Result Message for Version {version}: {dec_message}")
 
+        urls = extract_urls(str(dec_data))
+        if urls:
+            print("Check Message contains URL(s):")
+            for url in urls:
+                print(url)
+                
     except Exception as e:
         print(f"Error message: {e}")
