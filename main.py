@@ -1,6 +1,20 @@
 import requests
 import base64
 
+password = 'YOUR_BASE64_ENCODED_PASS'
+
+for _ in range(3):
+    user_password = input("Enter password: ")
+
+    if base64.b64encode(user_password.encode('utf-8')).decode('utf-8') == password:
+        break
+    else:
+        print("Incorrect password. Please try again.")
+
+else:
+    print("Incorrect password. Exiting the program...")
+    exit()
+
 def decode_protobuf_message(data):
     message = {}
     offset = 0
