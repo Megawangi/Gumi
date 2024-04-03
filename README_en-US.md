@@ -36,4 +36,8 @@ Super Simple Anime Game Dispatch Url Checker python version!
 - Im too lazy to update it, You can add features according to the logic of your code.
 
 
+<<<<<<< HEAD:README_en-us.md
 ## Status: Finished at [bb9c756](https://github.com/Megawangi/Gumi/blob/main/commit/bb9c756196ca1f0d9c952f2c9a80b62b0d91660c) Running Normally !
+=======
+## Status: Finished at [bb9c756](https://github.com/Megawangi/Gumi/commit/bb9c756196ca1f0d9c952f2c9a80b62b0d91660c) Running Normally !
+>>>>>>> 98724565b5106205c3f7872f137b65814348c3d2:README_en-US.md
