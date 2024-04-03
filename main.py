@@ -4,16 +4,11 @@ import base64
 import os
 import json
 import logging
+from config import colors
 
-# Default Password: OZMoon
-password = 'T1pNb29u' # Feel free to change it use base64 encoder ! 
-
-class colors:
-    RED = '\033[91m'
-    YELLOW = '\033[93m'
-    GREEN = '\033[92m'
-    BLUE = '\033[94m'
-    END = '\033[0m'
+with open('config.json') as config_file:
+    config_data = json.load(config_file)
+    password = config_data['password'] 
 
 for _ in range(5): # Retry 5x you can change it!
     user_password = input(f"{colors.BLUE}[INFO]{colors.END} Enter password: ")
@@ -82,7 +77,9 @@ while True:
         print(f"{colors.RED}[STOP]{colors.END} Shutdown the program...")
         break
 
-    url = f'' # Add dispatch url here
+    encoded_url = config_data["url"]
+    deurl = base64.b64decode(encoded_url).decode('utf-8')
+    url = f'{deurl}{version}&language_type=3&platform_type=1&channel_id=1&sub_channel_id=1&is_new_format=1'
 
     response = requests.get(url)
 
