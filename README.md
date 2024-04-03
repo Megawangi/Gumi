@@ -12,6 +12,7 @@ Super Simple Anime Game Dispatch Url Checker written using python
 # Requirements
 
 - [Python](https://www.python.org/downloads/)
+- request or just install [requirements.txt](https://github.com/Megawangi/Gumi/requirements.txt)
 - Brain
 - What?
 

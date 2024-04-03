@@ -54,9 +54,10 @@ def decode_protobuf_message(data):
     return message
 
 while True:
-    version = input("Write Star Rail Version or('exit' to stop): ")
+    version = input("Write Star Rail Version (use number ex: '1.3.51') or ('exit' 'quit' 'stop' 'shutdown') to stop the program: ")
 
-    if version.lower() == 'exit':
+    byee = {'exit', 'quit', 'stop', 'shutdown'}
+    if version.lower() in byee:
         print("Exiting the program...")
         break
 
