@@ -1,10 +1,12 @@
 import re
 import requests
 import base64
+import json
+import logging
+import os
 
 # Default Password: OZMoon
 password = 'T1pNb29u' # Feel free to change it use base64 encoder ! 
-
 
 for _ in range(3):
     user_password = input("Enter password: ")
@@ -17,6 +19,13 @@ for _ in range(3):
 else:
     print("Incorrect password. Exiting the program...")
     exit()
+
+logpath = 'log/logs.json'
+if not os.path.exists(logpath):
+    with open(logpath, 'w') as log_file:
+        log_file.write('[]')
+
+logging.basicConfig(filename=logpath, level=logging.INFO)
 
 def decode_protobuf_message(data):
     message = {}
@@ -85,5 +94,17 @@ while True:
             for url in urls:
                 print(url)
                 
+        log_entry = {
+            'version': version,
+            'response_status_code': response.status_code,
+            'raw_dec_content': str(dec_data),
+            'dec_message': dec_message,
+            'urls': urls
+        }
+        with open(logpath, 'r') as log_file:
+            logs = json.load(log_file)
+        logs.append(log_entry)
+        with open(logpath, 'w') as log_file:
+            json.dump(logs, log_file, indent=2)
     except Exception as e:
         print(f"Error message: {e}")
