@@ -3,8 +3,7 @@
 Super Simple Anime Game Dispatch Url Checker python version!
 
 # Another Language (Translated use AI)
-[ID](https://github.com/Megawangi/Gumi/blob/main/README_id-ID.md) || [CHS](https://github.com/Megawangi/Gumi/blob/main/README_zh-CN.md) ||
-[DOCS/EN](https://github.com/Megawangi/Gumi/blob/main/Docs/en-us/index.html)
+[ID](https://github.com/Megawangi/Gumi/blob/main/README_id-ID.md) || [CHS](https://github.com/Megawangi/Gumi/blob/main/README_zh-CN.md)
 
 # What is this?
 
