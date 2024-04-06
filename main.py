@@ -1,9 +1,7 @@
-import re
 import requests
-import base64
-import os
-import json
-import logging
+import os, base64, json, logging, re, random
+from datetime import datetime
+
 from colorama import init, Fore, Style
 init()
 
@@ -80,20 +78,37 @@ def send_to_discord_webhook(log_entry, webhook):
         'Content-Type': 'application/json'
     }
 
+    embed_color = random.randint(0, 0xFFFFFF)
+
+    if log_entry['urls']:
+        embed_color = 0x00FF00 
+    else:
+        embed_color = 0xFF0000
+    embed = {
+        'title': f"Star Rail Version {log_entry['version']} Log",
+        'fields': [
+            {'name': 'Response Status Code', 'value': str(log_entry['response_status_code']), 'inline': True},
+            {'name': 'Raw Decoded Content', 'value': str(log_entry['raw_dec_content']), 'inline': False},
+            {'name': 'Decoded Message', 'value': str(log_entry['dec_message']), 'inline': False},
+            {'name': 'URLs', 'value': '\n'.join(log_entry['urls']), 'inline': False}
+        ],
+        'color': embed_color,
+        'footer': {
+            'text': 'Timestamp: ' + str(datetime.now())
+        }
+    }
+
     payload = {
-        'content': f"**Version**: {log_entry['version']}\n"
-                   f"**Response Status Code**: {log_entry['response_status_code']}\n"
-                   f"**Raw Decoded Content**: {log_entry['raw_dec_content']}\n"
-                   f"**Decoded Message**: {log_entry['dec_message']}\n"
-                   f"**URLs**: {log_entry['urls']}"
+        'embeds': [embed]
     }
 
     response = requests.post(webhook, headers=headers, json=payload)
 
     if response.status_code == 200:
-        print("Log sent successfully to Discord webhook.")
-    else:
         print("Failed to send log to Discord webhook.")
+    else:
+        print("Log sent successfully to Discord webhook.")
+
 
 while True:
     version = input(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Write Star Rail Version (use number ex: '1.3.51') or ('exit' 'quit' 'stop' 'shutdown') to stop the program: ")
