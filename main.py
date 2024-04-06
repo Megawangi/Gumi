@@ -109,9 +109,9 @@ def send_to_discord_webhook(log_entry, webhook):
     response = requests.post(webhook, headers=headers, json=payload)
 
     if response.status_code == 200:
-        print("Failed to send log to Discord webhook.")
+        print(f"{Fore.RED}[ERROR]{Style.RESET_ALL}Failed to send log to Discord webhook.")
     else:
-        print("Log sent successfully to Discord webhook.")
+        print(f"{Fore.GREEN}[SEND]{Style.RESET_ALL}Log sent successfully to Discord webhook.")
 
 
 
