@@ -81,11 +81,15 @@ def send_to_discord_webhook(log_entry, webhook):
     embed_color = random.randint(0, 0xFFFFFF)
 
     if log_entry['urls']:
-        embed_color = 0x00FF00 
+        embed_color = 0x00FF00
     else:
         embed_color = 0xFF0000
+
+    ownerName = config_data["owner"]
+    mention = "@here" if log_entry['urls'] else f"@everyone Hey **{ownerName}**"
+
     embed = {
-        'title': f"Star Rail Version {log_entry['version']} Log",
+        'title': f"{mention} {log_entry['version']} Version check:",
         'fields': [
             {'name': 'Response Status Code', 'value': str(log_entry['response_status_code']), 'inline': True},
             {'name': 'Raw Decoded Content', 'value': str(log_entry['raw_dec_content']), 'inline': False},
@@ -108,6 +112,8 @@ def send_to_discord_webhook(log_entry, webhook):
         print("Failed to send log to Discord webhook.")
     else:
         print("Log sent successfully to Discord webhook.")
+
+
 
 
 while True:
