@@ -4,6 +4,7 @@ Super Simple Anime Game Dispatch Url Checker python version!
 
 # Another Language (Translated use AI)
 [ID](https://github.com/Megawangi/Gumi/blob/main/README_id-ID.md) || [CHS](https://github.com/Megawangi/Gumi/blob/main/README_zh-CN.md)
+[DOCS/EN](https://github.com/Megawangi/Gumi/blob/main/Docs/en-us/index.html)
 
 # What is this?
 
@@ -34,5 +35,6 @@ Super Simple Anime Game Dispatch Url Checker python version!
 - Super Simple but easy to understand also minim/less errors than typescript version.
 - This project not same as the typescript version, i do not care about the issue or bug.
 - Im too lazy to update it, You can add features according to the logic of your code.
-- 
+
+
 ## Status: Finished at [bb9c756](https://github.com/Megawangi/Gumi/commit/bb9c756196ca1f0d9c952f2c9a80b62b0d91660c) Running Normally !
