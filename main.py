@@ -10,6 +10,7 @@ init()
 with open('config.json') as config_file:
     config_data = json.load(config_file)
     password = config_data['password'] 
+    webhook = config_data.get('webhook', '')
 
 for _ in range(5): # Retry 5x you can change it!
     user_password = input(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Enter password: ")
@@ -70,6 +71,30 @@ def extract_urls(text):
     urls = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)
     return urls
 
+def send_to_discord_webhook(log_entry, webhook):
+    if not webhook:
+        print(f"{Fore.RED}[ERROR]{Style.RESET_ALL} Discord webhook URL is not provided.")
+        return
+
+    headers = {
+        'Content-Type': 'application/json'
+    }
+
+    payload = {
+        'content': f"**Version**: {log_entry['version']}\n"
+                   f"**Response Status Code**: {log_entry['response_status_code']}\n"
+                   f"**Raw Decoded Content**: {log_entry['raw_dec_content']}\n"
+                   f"**Decoded Message**: {log_entry['dec_message']}\n"
+                   f"**URLs**: {log_entry['urls']}"
+    }
+
+    response = requests.post(webhook, headers=headers, json=payload)
+
+    if response.status_code == 200:
+        print("Log sent successfully to Discord webhook.")
+    else:
+        print("Failed to send log to Discord webhook.")
+
 while True:
     version = input(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Write Star Rail Version (use number ex: '1.3.51') or ('exit' 'quit' 'stop' 'shutdown') to stop the program: ")
 
@@ -106,6 +131,9 @@ while True:
             'dec_message': dec_message,
             'urls': urls
         }
+
+        send_to_discord_webhook(log_entry, webhook)
+
         with open(logpath, 'r') as log_file:
             logs = json.load(log_file)
         logs.append(log_entry)
