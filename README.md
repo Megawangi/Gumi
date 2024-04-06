@@ -1,39 +1,38 @@
 # Gumi
 
-Pemeriksa Url Pengiriman Game Anime Super Sederhana versi python!
+Super Simple Anime Game Dispatch Url Checker python version!
 
-# Language
-[ID](https://github.com/Megawangi/Gumi/blob/main/README.md) || [ENG](https://github.com/Megawangi/Gumi/blob/main/README_en-US.md) || [CHS](https://github.com/Megawangi/Gumi/blob/main/README_zh-CN.md)
+# Another Language (Translated use AI)
+[ID](https://github.com/Megawangi/Gumi/blob/main/README_id-ID.md) || [CHS](https://github.com/Megawangi/Gumi/blob/main/README_zh-CN.md)
 
-# Apa ini?
+# What is this?
 
-- beberapa alat mengkloning tetapi lebih sederhana 
-- Saya tidak tahu 
-- ya python
-- Biru, pertanyaan berikutnya
+- some tools clone but its more simple 
+- I don't know 
+- yes python
+- Blue, next question
 
-# Persyaratan
+# Requirements
 
 - [Python](https://www.python.org/downloads/)
-- instal semua di [requirements.txt](https://github.com/Megawangi/Gumi/blob/main/requirements.txt)
-- Otak
-- Apa?
+- install all in [requirements.txt](https://github.com/Megawangi/Gumi/blob/main/requirements.txt)
+- Brain
+- What?
 
-## Bagaimana cara menggunakan ini?
+## How To use this?
 
-- buka cmd/terminal 
+- open cmd/terminal 
 - python main.py 
-- masukkan kata sandi (Kata Sandi Default: OZMoon)
-- masukkan versi (gunakan angka, contoh: 1.3.51) .50 belum berfungsi!
-- selamat Anda telah mendirikan mihoyo yang sudah memperbarui versi beta mereka
+- enter password (Default Password: OZMoon)
+- enter version (use number ex: 1.3.51) .50 isnt working yet!
+- congrats you founded that mihoyo already update their beta
 
-## Catatan
+## Note
 
-- Repositori GumiTS sekarang secara resmi bersifat privat dan tidak dapat diakses oleh publik karena terlalu rumit untuk digunakan. tetapi Anda masih dapat menggunakan proyek ini secara gratis dan open source!
-- 100% HardCoded karena saya tidak pandai python.
-- Sangat sederhana namun mudah dimengerti dan juga minim kesalahan dibanding versi typescript.
-- Proyek ini tidak sama dengan versi typescript, saya tidak peduli dengan masalah atau bug.
-- Saya terlalu malas untuk memperbaruinya, Anda dapat menambahkan fitur sesuai dengan logika kode Anda.
-
-
-## Status: Selesai di [bb9c756](https://github.com/Megawangi/Gumi/blob/main/commit/bb9c756196ca1f0d9c952f2c9a80b62b0d91660c) Berjalan Normal !
+- GumiTS repository is now officially private and cannot be accessed by the public because it is too complicated to use. but you can still use this project for free and open source!
+- HardCoded 100% cuz im not good at python.
+- Super Simple but easy to understand also minim/less errors than typescript version.
+- This project not same as the typescript version, i do not care about the issue or bug.
+- Im too lazy to update it, You can add features according to the logic of your code.
+- 
+## Status: Finished at [bb9c756](https://github.com/Megawangi/Gumi/commit/bb9c756196ca1f0d9c952f2c9a80b62b0d91660c) Running Normally !

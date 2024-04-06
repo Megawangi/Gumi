@@ -2,8 +2,8 @@
 
 超级简单的动漫游戏派遣 Url Checker python 版本！
 
-# Language
-[ID](https://github.com/Megawangi/Gumi/blob/main/blob/main/README.md) || [ENG](https://github.com/Megawangi/Gumi/blob/main/blob/main/README_en-US.md) || [CHS](https://github.com/Megawangi/Gumi/blob/main/README_zh-CN.md)
+# Another Language (Translated use AI)
+[ID](https://github.com/Megawangi/Gumi/blob/main/blob/main/README_id-ID.md) || [ENG](https://github.com/Megawangi/Gumi/blob/main/blob/main/README.md)
 
 # 这是什么？
 
