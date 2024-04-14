@@ -11,15 +11,15 @@ with open('config.json') as config_file:
     webhook = config_data.get('webhook', '')
 
 for _ in range(5): # Retry 5x you can change it!
-    user_password = input(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Enter password: ")
+    user_password = input(f"[{datetime.now().strftime('%H:%M:%S')}] {Fore.BLUE}[INFO]{Style.RESET_ALL} Enter password: ")
 
     if base64.b64encode(user_password.encode('utf-8')).decode('utf-8') == password:
         break
     else:
-        print(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Incorrect password. Please try again... {Fore.GREEN}[Default Password is 'OZMoon']{Style.RESET_ALL}")
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] {Fore.BLUE}[INFO]{Style.RESET_ALL} Incorrect password. Please try again... {Fore.GREEN}[Default Password is 'OZMoon']{Style.RESET_ALL}")
 
 else:
-    print(f"{Fore.RED}[SHUTDOWN]{Style.RESET_ALL} Incorrect password 5x times! Shutdown the program...")
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] {Fore.RED}[SHUTDOWN]{Style.RESET_ALL} Incorrect password 5x times! Shutdown the program...")
     exit()
 
 logpath = 'log/logs.json'
@@ -71,7 +71,7 @@ def extract_urls(text):
 
 def send_to_discord_webhook(log_entry, webhook):
     if not webhook:
-        print(f"{Fore.RED}[ERROR]{Style.RESET_ALL} Discord webhook URL is not provided.")
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] {Fore.RED}[ERROR]{Style.RESET_ALL} Discord webhook URL is not provided.")
         return
 
     headers = {
@@ -109,19 +109,19 @@ def send_to_discord_webhook(log_entry, webhook):
     response = requests.post(webhook, headers=headers, json=payload)
 
     if response.status_code == 200:
-        print(f"{Fore.RED}[ERROR]{Style.RESET_ALL}Failed to send log to Discord webhook.")
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] {Fore.RED}[ERROR]{Style.RESET_ALL}Failed to send log to Discord webhook.")
     else:
-        print(f"{Fore.GREEN}[SEND]{Style.RESET_ALL}Log sent successfully to Discord webhook.")
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] {Fore.GREEN}[SEND]{Style.RESET_ALL}Log sent successfully to Discord webhook.")
 
 
 
 
 while True:
-    version = input(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Write Star Rail Version (use number ex: '1.3.51') or ('exit' 'quit' 'stop' 'shutdown') to stop the program: ")
+    version = input(f"[{datetime.now().strftime('%H:%M:%S')}] {Fore.BLUE}[INFO]{Style.RESET_ALL} Write Star Rail Version (use number ex: '1.3.51') or ('exit' 'quit' 'stop' 'shutdown') to stop the program: ")
 
     byee = {'exit', 'quit', 'stop', 'shutdown'}
     if version.lower() in byee:
-        print(f"{Fore.RED}[STOP]{Style.RESET_ALL} Shutdown the program...")
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] {Fore.RED}[STOP]{Style.RESET_ALL} Shutdown the program...")
         break
 
     encoded_url = config_data["url"]
@@ -130,18 +130,18 @@ while True:
 
     response = requests.get(url)
 
-    print(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Status Code: {response.status_code}")
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] {Fore.BLUE}[INFO]{Style.RESET_ALL} Status Code: {response.status_code}")
 
     try:
         dec_data = base64.b64decode(response.content)
-        print(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Raw Message Content for Version {version}: {dec_data}")
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] {Fore.BLUE}[INFO]{Style.RESET_ALL} Raw Message Content for Version {version}: {dec_data}")
 
         dec_message = decode_protobuf_message(dec_data)
-        print(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Result Message for Version {version}: {dec_message}")
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] {Fore.BLUE}[INFO]{Style.RESET_ALL} Result Message for Version {version}: {dec_message}")
         
         urls = extract_urls(str(dec_data))
         if urls:
-            print(f"{Fore.BLUE}[INFO]{Style.RESET_ALL} Check Message contains URL:")
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] {Fore.BLUE}[INFO]{Style.RESET_ALL} Check Message contains URL:")
             for url in urls:
                 print(url)
                 
@@ -162,4 +162,4 @@ while True:
             json.dump(logs, log_file, indent=2)
 
     except Exception as e:
-        print(f"{Fore.RED}[ERROR]{Style.RESET_ALL} message: {e}")
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] {Fore.RED}[ERROR]{Style.RESET_ALL} message: {e}")
