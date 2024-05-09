@@ -1,11 +1,10 @@
 # Gumi
 
-Super Simple Anime Game Dispatch Url Checker python version!
+This repository is dead 
 
-# What is this?
+New version/Updated version is [here](https://github.com/FloopInc/GumiPY) 
 
-- some tools clone but its more simple 
-- I don't know
+
 
 # Requirements
 
